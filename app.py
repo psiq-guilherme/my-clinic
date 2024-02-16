@@ -24,7 +24,7 @@ JOBS = [
         "id": 4,
         "title": "Cleaner",
         "location": "Tangamandapio",
-        "salary": 1234.56
+        "salary": 1000000.56
     },
 
 ]
