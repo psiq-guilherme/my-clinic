@@ -12,9 +12,9 @@ def get_db():
 
     return client['clinic']
 
-def read_data(db: MongoClient, collection_name: str): # TODO: put kwargs to select data
+def read_data(db: MongoClient, collection_name: str, **kwargs): # TODO: put kwargs to select data
     collection = db[collection_name]
-    return collection.find()
+    return collection.find(kwargs)
 
 
 if __name__ == "__main__":

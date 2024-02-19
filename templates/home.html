@@ -29,12 +29,7 @@
     <div class="container">
       <h1 class="text-center mt-2 mb-4">Agende sua consulta</h1>
       <div>
-        {% for s in schedule %}
-        <p>startd: {{s["startdt"]}}</p>
-        <p>enddt: {{s["enddt"]}}</p>
-        <p>name: {{s["name"]}}</p>
-        <p>phone: {{s["phone"]}}</p>
-        {% endfor %}
+        {% include "scheduleditem.html" %}
       </div>
       <div class="clearfix">
         <img

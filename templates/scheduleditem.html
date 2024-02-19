@@ -1,0 +1,43 @@
+<div class="row">
+  {% for s in schedule %}
+
+  <div class="col-md-6">
+    <div class="card text-bg-secondary mb-3">
+      <div class="card-header">{{s["startdt"]}}</div>
+      <div class="card-body">
+        <h5 class="card-title">Secondary card title</h5>
+        <form action="">
+          <div class="row mb-3">
+            <label for="name" class="col-sm-2 col-form-label">Nome</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Nome completo"
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="phone" class="col-sm-2 col-form-label">Telefone</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="phone"
+                placeholder="Telefone com DDD"
+              />
+            </div>
+          </div>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <button class="btn btn-primary" type="submit">Agendar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
