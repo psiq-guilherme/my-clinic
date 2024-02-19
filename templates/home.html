@@ -25,9 +25,17 @@
       id="banner"
       src="/static/banner.jpg"
       alt="Foto de Emily Underworld na Unsplash"
-      />
+    />
     <div class="container">
       <h1 class="text-center mt-2 mb-4">Agende sua consulta</h1>
+      <div>
+        {% for s in schedule %}
+        <p>startd: {{s["startdt"]}}</p>
+        <p>enddt: {{s["enddt"]}}</p>
+        <p>name: {{s["name"]}}</p>
+        <p>phone: {{s["phone"]}}</p>
+        {% endfor %}
+      </div>
       <div class="clearfix">
         <img
           class="col-md-6 img-fluid float-md-end ms-md-3 mb-3 mb-md-0"

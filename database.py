@@ -4,19 +4,23 @@ from pymongo.server_api import ServerApi
 
 def get_db():
     uri = os.environ.get("MONGO_DB_ATLAS_URI")
-    # uri = "mongodb+srv://psiqguilhermeletsch:icuX44H0nY7NpGXm@my-clinic.kcqzquv.mongodb.net/?retryWrites=true&w=majority"
-
-    # Create a new client and connect to the server
     client = MongoClient(uri, server_api=ServerApi('1'))
-
-    # Send a ping to confirm a successful connection
     try:
         client.admin.command('ping')
     except Exception as e:
         raise(e)
 
-    return client
+    return client['clinic']
+
+def read_data(db: MongoClient, collection_name: str): # TODO: put kwargs to select data
+    collection = db[collection_name]
+    return collection.find()
+
 
 if __name__ == "__main__":
-    client = get_db()
-    print(client)
+    db = get_db()
+    data = read_data(db, 'schedule')
+    
+    for d in data:
+        print(type(d))
+        print(d)
