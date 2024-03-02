@@ -34,7 +34,7 @@ JOBS = [
 @app.route('/')
 def hello_world():
     schedule = read_data(db, 'schedule', name="", phone="")
-    return render_template('home.html', schedule=schedule, jobs=JOBS)
+    return render_template('Ahome.html', schedule=schedule, jobs=JOBS)
 
 @app.route("/api/jobs")
 def list_jobs():
